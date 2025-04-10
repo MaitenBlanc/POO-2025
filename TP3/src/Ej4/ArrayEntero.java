@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Ej4 {
+public class ArrayEntero {
     private int[] numeros = { 4, 2, 3, 8, 1 };
 
     // Cuantos números hay en el array números
@@ -60,17 +60,5 @@ public class Ej4 {
     // Para poder concatenar con los string de los sysout.
     public void imprimirArray(int[] a) {
         System.out.println(Arrays.toString(a));
-    }
-
-    public static void main(String[] args) {
-        Ej4 a = new Ej4();
-
-        System.out.println("Cantidad de números en el array: " + a.cantidadNumeros());
-        System.out.println("Número mayor: " + a.numeroMayor());
-        System.out.println("Promedio: " + a.promedioArray());
-        System.out.println("Orden Ascendente: ");
-        a.imprimirArray(a.ordenAscendente());
-        System.out.println("Orden Descendente: ");
-        a.imprimirArray(a.ordenDescendente());
     }
 }
