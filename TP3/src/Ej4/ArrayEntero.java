@@ -18,7 +18,6 @@ public class ArrayEntero {
                 mayor = numeros[i];
             }
         }
-
         return mayor;
     }
 
@@ -31,7 +30,6 @@ public class ArrayEntero {
             suma += numeros[i];
             promedio = suma / cantidadNumeros();
         }
-
         return promedio;
     }
 
@@ -53,7 +51,6 @@ public class ArrayEntero {
             numerosDescendentes[i] = numerosDescendentes[numerosDescendentes.length - 1 - i];
             numerosDescendentes[numerosDescendentes.length - 1 - i] = aux;
         }
-
         return numerosDescendentes;
     }
 
