@@ -1,3 +1,6 @@
+# Grupo N° 2 
+Baez, Blanc, Brogna, Doulay, Ojeda Lado.
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
