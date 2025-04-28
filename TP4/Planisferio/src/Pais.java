@@ -8,6 +8,7 @@ public class Pais {
     private double superficie;
     private Continente continente;
     private Set<Provincia> provincias;
+    private Set<Pais> paisesLimitrofes; 
 
     public Pais(String nombre, String capital, double superficie, Continente continente) {
         this.nombre = nombre;
@@ -15,6 +16,7 @@ public class Pais {
         this.superficie = superficie;
         this.continente = continente;
         this.provincias = new HashSet<>();
+        this.paisesLimitrofes = new HashSet<>();
     }
 
     public String getNombre() {
@@ -53,14 +55,24 @@ public class Pais {
     public String toString() {
         return "País: " + this.nombre + ", Capital: " + this.capital + ", Superficie: " + this.superficie + " km²";
     }
-
+    
     // Método para agregar provincias
     public void addProvincia(Provincia provincia) {
         provincias.add(provincia);
     }
-
+    
     // Método para devolver provincias
     public Set<Provincia> getProvincia() {
         return provincias;
+    }
+
+    // Devolver países limítrofes
+    public Set<Pais> getLimitrofes() {
+        return paisesLimitrofes;
+    }
+
+    // Agregar países limítrofes
+    public void addLimitrofes(Pais pais) {
+        paisesLimitrofes.add(pais);
     }
 }

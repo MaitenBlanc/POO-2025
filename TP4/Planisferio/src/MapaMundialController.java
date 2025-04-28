@@ -7,74 +7,6 @@ public class MapaMundialController {
         // Instanciar MapaMundial
         MapaMundial mapaMundial = new MapaMundial();
 
-        // Inicialización de continentes
-        Continente america = new Continente(
-                Normalizer.normalize("América", Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
-        Continente europa = new Continente("Europa");
-        Continente asia = new Continente("Asia");
-        Continente africa = new Continente(
-                Normalizer.normalize("África", Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
-        Continente oceania = new Continente(
-                Normalizer.normalize("Oceanía", Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
-        Continente antartida = new Continente(
-                Normalizer.normalize("Antártida", Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", ""));
-
-        // Agregar continentes
-        mapaMundial.addContinente(america);
-        mapaMundial.addContinente(europa);
-        mapaMundial.addContinente(asia);
-        mapaMundial.addContinente(africa);
-        mapaMundial.addContinente(oceania);
-        mapaMundial.addContinente(antartida);
-
-        // Inicialización de países
-        Pais argentina = new Pais("Argentina", "Buenos Aires", 2780400, america);
-        Pais uruguay = new Pais("Uruguay", "Montevideo", 176215, america);
-        Pais brasil = new Pais("Brasil", "Brasilia", 8515767, america);
-        Pais chile = new Pais("Chile", "Santiago de Chile", 756102, america);
-        Pais paraguay = new Pais("Paraguay", "Asunción", 406752, america);
-        Pais bolivia = new Pais("Bolivia", "Sucre", 1098581, america);
-        Pais españa = new Pais("España", "Madrid", 505990, europa);
-        Pais francia = new Pais("Francia", "París", 643801, europa);
-        Pais italia = new Pais("Italia", "Roma", 301340, europa);
-        Pais portugal = new Pais("Portugal", "Lisboa", 92212, europa);
-
-        // Agregar paises
-        america.addPais(argentina);
-        america.addPais(uruguay);
-        america.addPais(brasil);
-        america.addPais(chile);
-        america.addPais(paraguay);
-        america.addPais(bolivia);
-        europa.addPais(españa);
-        europa.addPais(francia);
-        europa.addPais(italia);
-        europa.addPais(portugal);
-
-        // Inicialización de provincias
-        Provincia entreRios = new Provincia("Entre Ríos");
-        Provincia buenosAires = new Provincia("Buenos Aires");
-        Provincia santaFe = new Provincia("Santa Fe");
-        Provincia corrientes = new Provincia("Corrientes");
-        Provincia cordoba = new Provincia("Córdoba");
-        Provincia salto = new Provincia("Salto");
-        Provincia paysandu = new Provincia("Paysandú");
-        Provincia canelones = new Provincia("Canelones");
-        Provincia rocha = new Provincia("Rocha");
-        Provincia maldonado = new Provincia("Maldonado");
-
-        // Agregar provincias
-        argentina.addProvincia(entreRios);
-        argentina.addProvincia(buenosAires);
-        argentina.addProvincia(santaFe);
-        argentina.addProvincia(corrientes);
-        argentina.addProvincia(cordoba);
-        uruguay.addProvincia(salto);
-        uruguay.addProvincia(paysandu);
-        uruguay.addProvincia(canelones);
-        uruguay.addProvincia(rocha);
-        uruguay.addProvincia(maldonado);
-
         // MENU
         Scanner scanner = new Scanner(System.in);
         int opcion;
@@ -85,6 +17,7 @@ public class MapaMundialController {
             System.out.println("2. Mostrar provincias de un país.");
             System.out.println("3. Mostrar países ordenados por superficie.");
             System.out.println("4. Comprar dos países.");
+            System.out.println("5. Mostrar países limítrofes.");
             System.out.println("0. Salir");
             System.out.print("Opción: ");
             opcion = scanner.nextInt();
@@ -157,13 +90,19 @@ public class MapaMundialController {
                     }
                     break;
 
+                case 5:
+                    System.out.print("Ingrese un país: ");
+                    String paisLimitrofe = scanner.nextLine();
+                    Set<Pais> limitrofes = mapaMundial.getLimitrofes(paisLimitrofe);
+                    limitrofes.forEach(System.out::println);
+                    break;
+
                 case 0:
                     System.out.println("Fin de la aplicación.");
                     break;
 
                 default:
                     System.out.println("Opción inválida.");
-                    break;
             }
         } while (opcion != 0);
 
