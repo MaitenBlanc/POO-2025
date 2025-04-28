@@ -1,4 +1,5 @@
 # Grupo N° 2 
+Baez, Blanc, Brogna, Doulay, Ojeda Lado.
 
 ## Getting Started
 
