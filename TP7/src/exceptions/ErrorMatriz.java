@@ -1,0 +1,9 @@
+package exceptions;
+
+public enum ErrorMatriz {
+    ERR_COLUMNAS_EXCEDIDAS,
+    ERR_FILAS_EXCEDIDAS,
+    ERR_DIMENSIONES_NEGATIVAS,
+    ERR_FILA_FUERA_DE_RANGO,
+    ERR_COLUMNA_FUERA_DE_RANGO
+}
