@@ -1,0 +1,9 @@
+package model;
+
+public enum ErrorEmpleado {
+    ERR_NOMBRE_INVALIDO,
+    ERR_SUELDO_INVALIDO,
+    ERR_LEGAJO_INVALIDO,
+    ERR_COLLECTION_VACIA,
+    ERR_EMPLEADO_NO_ENCONTRADO
+}
